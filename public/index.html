@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            background-color: beige;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 1.25em;
+        }
+        h1{
+            line-height: 1.5em;
+        }
+        .content {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        ol {
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: coral;
+            padding: 20px;
+        }
+
+        button {
+            background-color: goldenrod;
+
+            border: none;
+            border: solid 2px white;
+            padding: .5em;
+            color: white;
+            font-weight: bold;
+        }
+
+        label{
+            color: white;
+            font-weight: bold;
+        }
+
+        input{
+            border-color:darkkhaki;
+            border-width: .1em;
+            padding: .5em;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: chocolate;
+        }
+        code{
+            font-weight: bold;
+            color:darkorange;
+            font-size: 1.25em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+
+        <h1>API Project: URL Shortener Microservice</h1>
+        <h2>USER STORY:</h2>
+        <ol>
+
+            <li>I can POST a URL to <code>[project_url]/api/shorturl/new</code> and I will receive a shortened URL in the JSON
+                response.
+                Example :<code> {"original_url":"www.google.com","short_url":1}</code></li>
+            <li>If I pass an invalid URL that doesn't follow the <code>http(s)://www.example.com(/more/routes)</code> format, the
+                JSON response will contain an error like <code>{"error":"invalid URL"}</code></li>
+            <li>When I visit the shortened URL, it will redirect me to my original link.</li>
+        </ol>
+        <p><strong>HINT:</strong> to be sure that the submitted url points to a valid site you can use the function
+            dns.lookup(host, cb) from the dns core module.</p>
+        </br>
+        <h3>SHORTEN url</h3>
+        <p>EXAMPLE: <code>POST [project_url]/api/shorturl/new - https://www.google.com</code></p>
+        <form method ="POST" action = "/api/shorturl/new">
+            <label>URL to shorten: </label>
+            <input type="text" name="url" placeholder="http://www.freecodecamp.org" required />
+            <button type="submit">SHORTEN</button>
+        </form>
+        <p>by <a href="http://lumerb.com/" style="color:darkslateblue;"><strong>lumerbcode</strong></a></p>
+    </div>
+</body>
+
+</html>
